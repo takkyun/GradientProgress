@@ -13,9 +13,9 @@ public class GradientProgressBar : UIProgressView {
     // MARK: - Properties
     
     /// An array of CGColorRef objects defining the color of each gradient stop. Animatable.
-    public var gradientColors: [CGColor] = [#colorLiteral(red: 0.2666666667, green: 0.1803921569, blue: 0.8470588235, alpha: 1).cgColor, #colorLiteral(red: 0.8392156863, green: 0.2588235294, blue: 0.5333333333, alpha: 1).cgColor, #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1).cgColor, #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1).cgColor] {
+    public var gradientColors: [UIColor] = [#colorLiteral(red: 0.2666666667, green: 0.1803921569, blue: 0.8470588235, alpha: 1), #colorLiteral(red: 0.8392156863, green: 0.2588235294, blue: 0.5333333333, alpha: 1), #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1), #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)] {
         didSet {
-            gradientLayer.colors = gradientColors
+            gradientLayer.colors = gradientColors.map { $0.cgColor }
         }
     }
 
